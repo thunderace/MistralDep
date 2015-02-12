@@ -1,0 +1,2 @@
+C:\Windows\notepad.exe
+C:\Windows\regedit.exe

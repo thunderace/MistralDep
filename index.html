@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="cerulean/css/cerulean.min.css" class="uib-framework-theme">
+        <meta charset="UTF-8">
+        <title>Outils de déploiement MISTRAL</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; zoom: 100% ; }                           @viewport { width: 100vw ; zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; }                                    @viewport { user-zoom: fixed ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+				input#currentVersion {
+					margin-left: 5px;
+				}
+			</style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="bootstrap/bootbox.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+    </head>
+
+    <body>
+        <!-- IMPORTANT: Do not include your weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <div class="upage" id="mainpage">
+            <div class="upage-outer">
+                <div class="uib-header header-bg container-group inner-element uib_w_1" data-uib="layout/header" data-ver="0">
+                    <h2>Mistral</h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+                <div class="upage-content content-area vertical-col">
+                    <div class="sbs-container widget uib_w_3 d-margins" data-uib="layout/side_by_side" data-ver="0">
+                        <div class="leftContent widget-container">
+                            <div class="table-thing widget uib_w_4 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                                <label class="narrow-control label-inline">Version Active :  </label>
+                                <input readonly class="wide-control form-control default" id="currentVersion" type="text" placeholder="aucune">
+                            </div>
+                        </div>
+                        <div class="AAContent widget-container">
+                            <div class="table-thing widget uib_w_10 d-margins" data-uib="twitter%20bootstrap/button_menu" data-ver="1">
+                                <label class="narrow-control"></label>
+                                <div class="wide-control btn-group inline-widget">
+                                    <button class="btn dropdown-toggle btn-default" data-toggle="dropdown" id="changeVersionDropDown">Changer</span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="versionList">
+                                        <li><a href="#" id="action-1">Mistral 8.1</a>
+                                        </li>
+                                        <li><a href="#" id="action-2">Mistral 8.2</a>
+                                        </li>
+                                        <li><a href="#" id="action-3">Mistral 8.3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+	                    <button id="configureVersion" class="AAContent btn widget uib_w_11 btn-default d-margins" data-uib="twitter%20bootstrap/button" data-ver="1">Configurer</button>
+	                    <button id="createVersion" class="AAContent btn widget uib_w_11 btn-default d-margins" data-uib="twitter%20bootstrap/button" data-ver="1">Créer version</button>
+                    </div>
+                    <div class="btn-group uib-bs-flex widget uib_w_6 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                        <button id="start" class="btn widget uib_w_7 btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Démarrer</button>
+                        <button id="restart" class="btn widget uib_w_8 btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Redémarrer</button>
+                        <button id="stop" class="btn widget uib_w_9 btn-default" data-uib="twitter%20bootstrap/button" data-ver="1">Arrêter</button>
+                    </div>
+                    <button id="pathconfiguration" class="btn widget uib_w_11 btn-default d-margins" data-uib="twitter%20bootstrap/button" data-ver="1">Configuration des chemins</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
